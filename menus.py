@@ -1,6 +1,9 @@
+# coding=utf-8
+
 import os
 import time
 from functions import *
+
 
 menu_initial = [
 'Validar servicio' ,
