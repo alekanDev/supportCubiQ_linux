@@ -5,17 +5,17 @@ import time
 from functions import *
 
 
-menu_initial = [
-'Validar servicio' ,
-'Estado de la vpn' ,
-'Conexión a Internet' ,
-'Calibrar medidas' ,
-'Configurar peso' ,
-'Reinicio de puertos' ,
-'Revision de camara Externa' ,
-'Update CubiQ',
-'Salir'
-]
+menu_initial = {
+  1 : 'Validar servicio',
+  2 : 'Estado de la vpn' ,
+  3 : 'Conexión a Internet' ,
+  4 : 'Calibrar medidas' ,
+  5 : 'Configurar peso' ,
+  6 : 'Reinicio de puertos' ,
+  7 : 'Revision de camara Externa' ,
+  8 : 'Update CubiQ',
+  9 : 'Salir'
+}
 
 error_list = [
   'Item no existe en el menu'
@@ -25,12 +25,12 @@ def salir():
   print('gracias')
 
 def print_menu(title, menu):
-  i=1
   clean()
   title()
-  for x in menu:
-    print(f'{i}. {x}')
-    i = i+1
+  for opc, val in menu.items():
+    print(f'{opc}. {val}')
 
 def error(item):
-  return(error_list[item])
+  print(f'{error_list[item]}')
+  time.sleep(0.8)
+  return
