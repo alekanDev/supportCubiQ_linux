@@ -1,5 +1,3 @@
-# coding=utf-8
-
 import os
 import time
 from functions import *
@@ -17,12 +15,11 @@ menu_initial = {
   9 : 'Salir'
 }
 
-error_list = [
-  'Item no existe en el menu'
-]
-
-def salir():
-  print('gracias')
+# error_list = {
+#   0 : 'Caracter no identificado',
+#   1 : 'Item no existe en el menu',
+#   2 : 'Item negativo es incorrecto'
+# }
 
 def print_menu(title, menu):
   clean()
@@ -30,7 +27,6 @@ def print_menu(title, menu):
   for opc, val in menu.items():
     print(f'{opc}. {val}')
 
-def error(item):
-  print(f'{error_list[item]}')
-  time.sleep(0.8)
-  return
+# def print_error(item):
+#   print(error_list.get(item))
+#   time.sleep(0.8)
