@@ -4,7 +4,7 @@ from functions import *
 
 def validate_int(value):
   if(type(value) == int):
-    return 1
+    return value
   else:
     return 0
 
@@ -17,14 +17,21 @@ def start_app():
       validate_int(option)
       state_cubiq = execut(menu_initial[option])
       if(state_cubiq == 0):
-        print_menu(title_support, menu_run_cubiq)
+        while(option != 0):
+          try:
+            print_menu(title_support, menu_run_cubiq)
 
-        option = int(input('\nIngresar opcion: '))
-        option_run_cubiq = validate_int(option)
-        if(option_run_cubiq == 1):
-          execut(menu_run_cubiq[option])
-        elif(option_run_cubiq == 2):
-          execut(menu_run_cubiq[option])
+            option = int(input('\nIngresar opcion: '))
+            option_run_cubiq = validate_int(option)
+            if(option_run_cubiq == 1):
+              execut(menu_run_cubiq[option])
+            elif(option_run_cubiq == 2):
+              execut(menu_run_cubiq[option])
+            elif(option_run_cubiq == 0):
+              option=0
+          except:
+            ption = validate_error(option)
+            time.sleep(1)
     except:
       option = validate_error(option)
       time.sleep(1)

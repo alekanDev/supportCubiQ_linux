@@ -43,8 +43,10 @@ def execut(menu_option):
     return state
   elif(menu_option == 'Iniciar proceso CubiQ'):
     os.system('sudo systemctl start cubiqagent')
-  elif(menu_option == 'Validar conexión a Internet'):
-    print('Validando conexión...')
+  elif(menu_option == 'Validar estado del CubiQ'):
+    state = os.system('systemctl status cubiqagent')
+    print(state)
+    time.sleep(2)
 
 def validate_error(value):
   value = int_or_noInt(value)

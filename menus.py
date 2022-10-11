@@ -16,7 +16,9 @@ menu_initial = {
 }
 
 menu_run_cubiq = {
-  1 : 'Iniciar proceso CubiQ'
+  0 : 'Volver',
+  1 : 'Iniciar proceso CubiQ',
+  2 : 'Validar estado del CubiQ'
 }
 
 def print_menu(title, menu):
