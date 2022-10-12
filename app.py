@@ -38,8 +38,8 @@ def start_app():
           except:
             option = validate_error(option)
             time.sleep(1)
-      elif(state_cubiq == 3):
-        print(error_list.get(3))
+      # elif(state_cubiq == 3):
+      #   print(error_list.get(3))
       elif(state_cubiq == 9):
         return
     except:

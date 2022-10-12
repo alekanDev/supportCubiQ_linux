@@ -24,8 +24,9 @@ def state_cubiq():
   # state = 'Active: active (inactive) since Tue 2022-10-04 13:09:19 -05; 47min ago'
   # print(f'{state} y es de tip {type(state)} ')
   if(state == 256):
+    print(error_list.get(3))
     time.sleep(1)
-    return 3
+    return 0
   elif('running' in state):
     print('The service is running')
     return 1
