@@ -4,7 +4,7 @@ from functions import *
 
 
 menu_initial = {
-  1 : 'Validar servicio',
+  1 : 'Validar estado del CubiQ',
   2 : 'Validar vpn' ,
   3 : 'Conexión a Internet' ,
   4 : 'Calibrar medidas' ,
@@ -18,7 +18,8 @@ menu_initial = {
 menu_run_cubiq = {
   0 : 'Volver',
   1 : 'Iniciar proceso CubiQ',
-  2 : 'Validar estado del CubiQ'
+  2 : 'Validar estado del CubiQ',
+  3 : 'Salir'
 }
 
 def print_menu(title, menu):

@@ -20,18 +20,25 @@ def start_app():
         while(option != 0):
           try:
             print_menu(title_support, menu_run_cubiq)
-
             option = int(input('\nIngresar opcion: '))
             option_run_cubiq = validate_int(option)
-            if(option_run_cubiq == 1):
+
+            if(option_run_cubiq == 0):
+              option=0
+            elif(option_run_cubiq == 1):
               execut(menu_run_cubiq[option])
             elif(option_run_cubiq == 2):
               execut(menu_run_cubiq[option])
-            elif(option_run_cubiq == 0):
-              option=0
+            elif(option_run_cubiq == 3):             
+              clean()
+              title_exit()
+              return
           except:
-            ption = validate_error(option)
+            option = validate_error(option)
             time.sleep(1)
+
+      elif(state_cubiq == 9):
+        return
     except:
       option = validate_error(option)
       time.sleep(1)

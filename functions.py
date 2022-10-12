@@ -19,8 +19,8 @@ def clean():
   os.system('clear')
 
 def state_cubiq():
-  # state = os.system('systemctl status cubiqagent | grep running')
-  state = 'Active: active () since Tue 2022-10-04 13:09:19 -05; 47min ago'
+  state = os.system('systemctl status cubiqagent | grep running')
+  # state = 'Active: active (running) since Tue 2022-10-04 13:09:19 -05; 47min ago'
   if('running' in state):
     print('The service is running')
     return 1
@@ -37,7 +37,7 @@ def int_or_noInt(validate):
 
 
 def execut(menu_option):
-  if(menu_option == 'Validar servicio'):
+  if(menu_option == 'Validar estado del CubiQ'):
     state = state_cubiq()
     time.sleep(1)
     return state
@@ -46,7 +46,9 @@ def execut(menu_option):
   elif(menu_option == 'Validar estado del CubiQ'):
     state = os.system('systemctl status cubiqagent')
     print(state)
-    time.sleep(2)
+    time.sleep(1)
+  elif(menu_option == 'Salir'):
+    return
 
 def validate_error(value):
   value = int_or_noInt(value)
