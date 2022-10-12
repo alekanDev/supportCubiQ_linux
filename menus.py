@@ -4,7 +4,7 @@ from functions import *
 
 
 menu_initial = {
-  1 : 'Validar estado del CubiQ',
+  1 : 'Estado del CubiQ',
   2 : 'Validar vpn' ,
   3 : 'Conexión a Internet' ,
   4 : 'Calibrar medidas' ,
