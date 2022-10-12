@@ -16,11 +16,13 @@ def start_app():
       option = int(input('\nIngresar opcion: '))
       validate_int(option)
       state_cubiq = execut(menu_initial[option])
+      # print(state_cubiq)
       if(state_cubiq == 0):
         while(option != 0):
           try:
             print_menu(title_support, menu_run_cubiq)
             option = int(input('\nIngresar opcion: '))
+
             option_run_cubiq = validate_int(option)
 
             if(option_run_cubiq == 0):
@@ -36,11 +38,13 @@ def start_app():
           except:
             option = validate_error(option)
             time.sleep(1)
-
+      elif(state_cubiq == 3):
+        print(error_list.get(3))
       elif(state_cubiq == 9):
         return
     except:
       option = validate_error(option)
+      print(option)
       time.sleep(1)
       
   clean()

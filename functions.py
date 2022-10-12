@@ -6,7 +6,8 @@ error_list = {
   0 : 'Caracter no identificado',
   1 : 'Item no existe en el menu',
   2 : 'Item negativo es incorrecto',
-  3 : 'Por definir'
+  3 : 'No existe el servicio',
+  4 : 'Por definir'
 }
 
 def print_menu(title, menu):
@@ -20,11 +21,15 @@ def clean():
 
 def state_cubiq():
   state = os.system('systemctl status cubiqagent | grep running')
-  # state = 'Active: active (running) since Tue 2022-10-04 13:09:19 -05; 47min ago'
-  if('running' in state):
+  # state = 'Active: active (inactive) since Tue 2022-10-04 13:09:19 -05; 47min ago'
+  # print(f'{state} y es de tip {type(state)} ')
+  if(state == 256):
+    time.sleep(1)
+    return 3
+  elif('running' in state):
     print('The service is running')
     return 1
-  elif(state):
+  elif('inactive' in state):
     print("The service isn't running")
     return 0
   
@@ -45,14 +50,16 @@ def execut(menu_option):
     os.system('sudo systemctl start cubiqagent')
   elif(menu_option == 'Validar estado del CubiQ'):
     state = os.system('systemctl status cubiqagent')
-    print(state)
     time.sleep(1)
   elif(menu_option == 'Salir'):
     return
 
 def validate_error(value):
   value = int_or_noInt(value)
+  print(value)
   if(value == 0):
+    print(error_list.get(value))
+  if(value == 3):
     print(error_list.get(value))
   elif(value > 0):
     value = 1
