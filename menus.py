@@ -18,7 +18,7 @@ menu_initial = {
 menu_run_cubiq = {
   0 : 'Volver',
   1 : 'Iniciar proceso CubiQ',
-  2 : 'Validar estado del CubiQ',
+  2 : 'Estado del CubiQ',
   3 : 'Salir'
 }
 
